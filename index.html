@@ -7,12 +7,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: 'Noto Sans KR', sans-serif;
       background-color: #1b1b1b;
@@ -40,6 +34,22 @@
 
     @keyframes fadeIn {
       to { opacity: 1; }
+    }
+
+    /* 자격증 사진 스타일 */
+    .team-card img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      filter: contrast(1.2) brightness(1.1); /* 선명도 및 밝기 조정 */
+      transition: all 0.3s ease;
+    }
+
+    .team-card img:hover {
+      transform: scale(1.05); /* 이미지를 확대 */
+      filter: contrast(1.4) brightness(1.2); /* 호버시 더 선명하게 */
     }
 
     .banner {
@@ -135,6 +145,10 @@
       line-height: 1.6;
     }
 
+   .team-card img {
+    margin-top: 1rem; /* 이미지와 텍스트 사이에 여백 추가 */
+    }
+
     .team-section {
       padding: 4rem 2rem;
       background: #1c1c1c;
@@ -154,23 +168,6 @@
       align-items: center;
     }
 
-    .team-card {
-      background: #252525;
-      border: 1px solid #444;
-      border-radius: 1rem;
-      padding: 2rem;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.6);
-      transition: transform 0.3s ease;
-      text-align: center;
-    }
-
-    .team-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(245,198,110,0.4);
-    }
-
     .team-card h3 {
       color: #ffe58a;
       font-size: 1.3rem;
@@ -183,12 +180,39 @@
       color: #ccc;
     }
 
-    .team-card img {
-      margin-top: 1rem;
+    .team-card {
+      background: #2a2a2a;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 실선 추가 스타일 */
+    .team-card::after {
+      content: '';
+      display: block;
       width: 100%;
-      border-radius: 0.5rem;
-      border: 1px solid #444;
-      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      height: 1px;
+      background-color: #444;
+      margin-top: 1rem;
+    }
+
+    .view-cert-btn {
+      background: #f5c66e;
+      color: #1b1b1b;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 1rem;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .view-cert-btn:hover {
+      background-color: #ffe58a;
+      box-shadow: 0 0 20px rgba(245,198,110,0.6);
+      transform: translateY(-3px);
     }
 
     footer {
@@ -232,55 +256,34 @@
       <div class="team-card">
         <h3>강태은</h3>
         <p>성별: 여자<br>나이: 1987년생<br>자격증: 탐정사 1급</p>
-        <img src="https://i.postimg.cc/670tLZyj/Kakao-Talk-20250408-134326191.jpg" alt="자격증1">
+        <img src='https://i.postimg.cc/2SR0q3Y7/t-waifu2x-photo-noise3.png'/>
       </div>
       <div class="team-card">
         <h3>김태식</h3>
         <p>성별: 남자<br>나이: 1980년생<br>자격증: 탐정사 1급</p>
-        <img src="https://i.postimg.cc/Q9YDvrgc/Kakao-Talk-20250408-134326191-01.jpg" alt="자격증2">
+        <img src="https://i.postimg.cc/QxsbswJf/ts-waifu2x-photo-noise3.png" alt="자격증2">
       </div>
       <div class="team-card">
         <h3>강종선</h3>
         <p>성별: 남자<br>나이: 1981년생<br>자격증: 탐정사 1급</p>
-        <img src="https://i.postimg.cc/7bbw0fD9/Kakao-Talk-20250408-134326191-02.jpg" alt="자격증3">
+        <img src="https://i.postimg.cc/8PHbC4yN/js-waifu2x-photo-noise3.png" alt="자격증3">
       </div>
       <div class="team-card">
         <h3>김태오</h3>
         <p>성별: 남자<br>나이: 1978년생<br>자격증: 탐정사 1급</p>
-        <img src="https://i.postimg.cc/0K6vsHZF/Kakao-Talk-20250408-134326191-03.jpg" alt="자격증4">
+        <img src="https://i.postimg.cc/L883gP7f/to-waifu2x-photo-noise3.png" alt="자격증4">
       </div>
     </div>
   </section>
 
-  <div id="contactModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(3px); z-index: 999; justify-content: center; align-items: center;">
-    <div style="background: #2a2a2a; padding: 2rem; border-radius: 1rem; text-align: center; box-shadow: 0 0 20px rgba(0,0,0,0.8); max-width: 300px;">
-      <h2 style="color: #f5c66e; margin-bottom: 1.5rem;">상담 방법 선택</h2>
-      <a href="tel:01055683334" style="display: block; margin: 1rem 0; background: #f5c66e; color: #1b1b1b; padding: 0.8rem; border-radius: 8px; font-weight: bold; text-decoration: none;">📞 전화 걸기</a>
-      <a href="sms:01055683334" style="display: block; margin: 1rem 0; background: #f5c66e; color: #1b1b1b; padding: 0.8rem; border-radius: 8px; font-weight: bold; text-decoration: none;">💬 문자 보내기</a>
-      <button onclick="closeModal()" style="margin-top: 1rem; background: transparent; color: #ccc; border: none; text-decoration: underline; cursor: pointer;">닫기</button>
-    </div>
-  </div>
+  <footer>
+    <p>© 2025 고고탐정사무실</p>
+  </footer>
 
   <script>
-    const modal = document.getElementById("contactModal");
-    document.getElementById("contactTrigger").addEventListener("click", function(e) {
-      e.preventDefault();
-      modal.style.display = "flex";
-    });
-
-    function closeModal() {
-      modal.style.display = "none";
-    }
-
-    modal.addEventListener("click", function(e) {
-      if (e.target === modal) {
-        closeModal();
-      }
+    document.getElementById('contactTrigger').addEventListener('click', function() {
+      document.getElementById('contactModal').style.display = 'block';
     });
   </script>
-
-  <footer>
-    &copy; 2025 믿을 수 있는 전문 고고 탐정 사무실. All rights reserved.
-  </footer>
 </body>
 </html>
